@@ -15,7 +15,7 @@ app = Client(
 @app.on_message(filters.command('help'))
 async def ajuda(client, message):
     print(message.chat.username, message.text)
-    await message.reply("""Olá eu sou o ChamberlinBot.
+    await message.reply("""Olá eu sou o ChamberlinBot. Por enquanto vamos apresentar os principais comandos de consulta.
     Comandos:
     /select
     /from
@@ -59,7 +59,6 @@ async def case(client, message):
         select to_char(sysdate, 'Dy DD-Mon-YYYY HH24:MI:SS')
         as "Current Time"
         from dual;
-
         """
         )
 
@@ -67,6 +66,12 @@ async def case(client, message):
 @app.on_message()
 async def messages(client, message):
     print(message.chat.username, message.text)
-    await message.reply('Desculpe, o comando ' + '"' + message.text + '"' + ' não é um comando valido ao ainda não o aprendi.' )
+    await message.reply(""" Desculpe, o comando """ + message.text + """ não é um comando valido ou ainda não o aprendi.
+    Por enquanto tenho esses comandos:
+    Há e não se esqueça da barra no inicio do comando.
+    /help
+    /select
+    /from
+    """ )
 
 app.run()
