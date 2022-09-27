@@ -25,7 +25,7 @@ async def ajuda(client, message):
 async def case(client, message):
     print(message.chat.username, message.text)
     await message.reply("""
-    A principal função do ***SELECT*** é consultar/buscar os dados de uma tabela em um banco de dados. O caracter * retorna todas as colunas do banco.
+    A principal função do **SELECT** é consultar/buscar os dados de uma tabela em um banco de dados. O caracter * retorna todas as colunas da tabela pesquisada.
     Exemplo: 
  select * from departamento;
 
@@ -42,7 +42,24 @@ async def case(client, message):
     print(message.chat.username, message.text)
     await message.reply(
         """
-        
+        O comando **FROM** é usado para especificar de qual tabela selecionar ou excluir dados.
+         Exemplo: 
+
+        select * from departamento;
+        DEPART     DNOME        UF
+      ------ -------------- ---------
+        10     ACCOUNTING      BH
+        20     RESEARCH        SP
+        30     SALES           RS
+        40     OPERATIONS      BA
+
+       Outros exemplos onde exigirão uma declaração From com uma palavra-chave, até mesmo para selecionar dados do sistema.
+        Exemplo:
+
+        select to_char(sysdate, 'Dy DD-Mon-YYYY HH24:MI:SS')
+        as "Current Time"
+        from dual;
+
         """
         )
 
